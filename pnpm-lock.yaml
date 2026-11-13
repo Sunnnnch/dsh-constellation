@@ -14,6 +14,9 @@ importers:
       '@xterm/xterm':
         specifier: ^5.5.0
         version: 5.5.0
+      ssh2:
+        specifier: ^1.16.0
+        version: 1.17.0
 
   packages/dsh-vps:
     dependencies:
@@ -45,12 +48,6 @@ importers:
       '@deepseek-ai/dsh-user-approval':
         specifier: 0.2.2-rc.1
         version: 0.2.2-rc.1(1a138c50a7635bf659bc7b93ff26bbfe)
-
-  packages/dsh-vps-bundle:
-    dependencies:
-      '@sunrise/dsh-vps':
-        specifier: workspace:*
-        version: link:../dsh-vps
 
 packages:
 
