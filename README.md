@@ -1,4 +1,12 @@
-# Constellation（@sunrise/dsh-vps）
+<p align="center">
+  <img src="assets/icon.svg" width="88" height="88" alt="Constellation icon" />
+</p>
+
+<h1 align="center">Constellation</h1>
+
+<p align="center">
+  <code>@sunrise/dsh-vps</code> · DeepSeek Harness 的 VPS 舰队管理
+</p>
 
 SSH / VPS 管理插件：让 **DeepSeek Harness 的模型**和**人**共用同一份服务器资产。
 模型能列主机、跑命令、传文件、开隧道、读状态；人可以从**左侧栏的「Constellation」入口**打开完整的 VPS 管理页，也可以在右侧栏用同一个面板边聊边看。

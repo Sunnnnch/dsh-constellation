@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Constellation">
+  <rect width="64" height="64" rx="16" fill="#111827"/>
+  <g stroke="#e5e7eb" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" opacity="0.55" fill="none">
+    <path d="M10 42L22.4 21.6L34.4 34.4L44.8 15.2"/>
+    <path d="M34.4 34.4L54.4 32.8"/>
+    <path d="M34.4 34.4L36.4 52.8"/>
+  </g>
+  <g fill="#f9fafb">
+    <circle cx="10" cy="42" r="4.2"/>
+    <circle cx="22.4" cy="21.6" r="4.2"/>
+    <circle cx="34.4" cy="34.4" r="5.4"/>
+    <circle cx="44.8" cy="15.2" r="4.2"/>
+    <circle cx="54.4" cy="32.8" r="4.2"/>
+    <circle cx="36.4" cy="52.8" r="4.2"/>
+  </g>
+</svg>
