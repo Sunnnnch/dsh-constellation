@@ -72,6 +72,6 @@ ${body}
 })
 `
 
-const target = new URL('packages/dsh-vps/lib/client.terminal.js', root)
+const target = new URL('lib/client.terminal.js', root)
 writeFileSync(target, chunk, 'utf8')
 console.log(`wrote ${target.pathname} (${(chunk.length / 1024).toFixed(0)} KiB)`)

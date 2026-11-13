@@ -14,7 +14,7 @@ import net from 'node:net'
 import http from 'node:http'
 import { fakeShell } from './fake-shell.mjs'
 import { attachSftp } from './sftp-memory.mjs'
-import { analyzeCommand, analyzeToolCall } from '../packages/dsh-vps/lib/policy.js'
+import { analyzeCommand, analyzeToolCall } from '../lib/policy.js'
 
 const { Server } = ssh2
 const PORT = Number(process.env.HARNESS_PORT) || 2233
@@ -168,7 +168,7 @@ const makeCtx = (withOptional) => ({
   },
 })
 
-const plugin = await import('../packages/dsh-vps/lib/index.js')
+const plugin = await import('../lib/index.js')
 plugin.apply(makeCtx(false), {})
 
 check('plugin loads and registers tools', registered.size === 14, `${registered.size}: ${[...registered.keys()].join(',')}`)
@@ -338,7 +338,7 @@ const secretRejected = await callRpc({ op: 'secretSet', ref: 'DEEPSEEK_API_KEY',
 check('secretSet refuses credentials outside the plugin namespace', secretRejected.ok === false && /DSH_VPS_/.test(secretRejected.error || ''), secretRejected.error)
 
 const outside = join(homedir(), '..', 'outside-dsh.txt')
-const { VpsService: VpsServiceFence } = await import('../packages/dsh-vps/lib/service.js')
+const { VpsService: VpsServiceFence } = await import('../lib/service.js')
 const fenceService = new VpsServiceFence(makeCtx(false), {})
 let fenceError
 try {
@@ -440,7 +440,7 @@ const alertsRpc = await callRpc({ op: 'alerts' })
 check('RPC alerts returns an array', Array.isArray(alertsRpc.alerts), `${alertsRpc.alerts?.length} active`)
 
 // A dedicated service instance with aggressive thresholds proves the alert path.
-const { VpsService } = await import('../packages/dsh-vps/lib/service.js')
+const { VpsService } = await import('../lib/service.js')
 const isolated = new VpsService(makeCtx(false), { alertThresholds: { memPct: 1, diskPct: 1, cpuPct: 1 } })
 const alertSample = await isolated.sampleHost('local')
 const raised = isolated.listAlerts()

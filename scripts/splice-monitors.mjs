@@ -1,6 +1,6 @@
 import { readFileSync, writeFileSync } from 'node:fs'
 
-const path = 'packages/dsh-vps/lib/client.js'
+const path = 'lib/client.js'
 const source = readFileSync(path, 'utf8')
 const startMarker = '    /** Read-only view of configured Komari / Nezha deployments. */'
 const endMarker = '    /** Credential key names a host derives from its id'

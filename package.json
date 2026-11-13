@@ -1,18 +1,58 @@
 {
-  "name": "dsh-constellation",
-  "private": true,
+  "name": "@sunrise/dsh-vps",
+  "version": "0.2.0",
+  "description": "Constellation — SSH / VPS fleet management for DeepSeek Harness: host inventory, remote exec, SFTP, port forwarding, an SSH terminal backend, and a star-map panel in the left sidebar.",
   "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/index.js",
+    "lib/client.js",
+    "lib/client.terminal.js",
+    "lib/*.js",
+    "cordis.patch.yml"
+  ],
   "scripts": {
-    "check": "node --check packages/dsh-vps/lib/index.js",
+    "check": "node --check lib/index.js",
     "test": "node test/all.mjs",
     "test:harness": "node test/harness.mjs",
     "test:client": "node test/client-smoke.mjs",
     "test:terminal": "node test/terminal-chunk.mjs",
     "build:terminal": "node scripts/build-terminal-chunk.mjs"
   },
+  "license": "MIT",
+  "engines": {
+    "dsh": ">=0.2.2-rc.1 <0.3.0"
+  },
   "dependencies": {
-    "@xterm/addon-fit": "^0.10.0",
-    "@xterm/xterm": "^5.5.0",
     "ssh2": "^1.16.0"
+  },
+  "devDependencies": {
+    "@xterm/addon-fit": "^0.10.0",
+    "@xterm/xterm": "^5.5.0"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "~4.1.0",
+    "@deepseek-ai/dsh-tools": "0.2.2-rc.1"
+  },
+  "peerDependenciesMeta": {},
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-layout",
+        "@deepseek-ai/dsh-client-ui-sidebar",
+        "@deepseek-ai/dsh-client-ui-sidebar-right"
+      ]
+    }
   }
 }

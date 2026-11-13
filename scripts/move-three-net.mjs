@@ -1,6 +1,6 @@
 import { readFileSync, writeFileSync } from 'node:fs'
 
-const path = 'packages/dsh-vps/lib/client.js'
+const path = 'lib/client.js'
 let source = readFileSync(path, 'utf8')
 const titleAt = source.indexOf("el('h3', null, '三网延迟')")
 if (titleAt < 0) {

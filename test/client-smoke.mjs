@@ -9,7 +9,7 @@
  */
 import { readFileSync } from 'node:fs'
 
-const source = readFileSync(new URL('../packages/dsh-vps/lib/client.js', import.meta.url), 'utf8')
+const source = readFileSync(new URL('../lib/client.js', import.meta.url), 'utf8')
 
 const results = []
 const check = (name, ok, detail = '') => {

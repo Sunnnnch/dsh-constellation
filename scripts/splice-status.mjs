@@ -1,5 +1,5 @@
 import { readFileSync, writeFileSync } from "node:fs"
-const path = "packages/dsh-vps/lib/client.js"
+const path = "lib/client.js"
 const source = readFileSync(path, "utf8")
 const startMarker = "    /** Status + latency cards, refreshed while mounted (Komari-style layout). */"
 const endMarker = "    /** Lazily loaded xterm chunk"

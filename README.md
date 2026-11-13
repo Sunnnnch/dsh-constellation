@@ -14,19 +14,31 @@ SSH / VPS 管理插件：让 **DeepSeek Harness 的模型**和**人**共用同�
 
 ## 安装
 
-本包同时是 **能力包** 和 **bundle**（`dsh.bundle.patch`）。
+本包同时是 **能力包** 和 **bundle**（`dsh.bundle.patch`），可以直接从 GitHub 安装：
+
+```bash
+pnpm add github:Sunnnnch/dsh-constellation
+```
+
+固定到某个提交（可复现构建）：
+
+```bash
+pnpm add github:Sunnnnch/dsh-constellation#<commit-sha>
+```
+
+装进 DSH profile 时，把依赖和 bundle 一起声明：
 
 ```jsonc
 // ~/.dsh/profiles/desktop/package.json
 {
   "dependencies": {
-    "@sunrise/dsh-vps": "link:C:/path/to/dsh-vps/packages/dsh-vps"
+    "@sunrise/dsh-vps": "github:Sunnnnch/dsh-constellation"
   },
   "dsh": { "profile": { "bundles": ["@deepseek-ai/dsh-base", "@deepseek-ai/dsh-web-app", "@sunrise/dsh-vps"] } }
 }
 ```
 
-然后在该 profile 目录 `pnpm install`，重启 DSH。
+然后在该 profile 目录 `pnpm install`，重启 DSH（或关掉再打开插件 entry）。本地开发用 `link:/path/to/dsh-constellation`。
 
 ## 模型侧工具
 
