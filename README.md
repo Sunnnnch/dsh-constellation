@@ -1,11 +1,17 @@
 <p align="center">
-  <img src="assets/icon.svg" width="88" height="88" alt="Constellation icon" />
+  <img src="marketing/social-preview.png" alt="Constellation — SSH/VPS fleet management for DeepSeek Harness" width="860" />
 </p>
 
 <h1 align="center">Constellation</h1>
 
 <p align="center">
   <code>@sunrise/dsh-vps</code> · DeepSeek Harness 的 VPS 舰队管理
+</p>
+
+<p align="center">
+  <a href="LICENSE"><img alt="license" src="https://img.shields.io/github/license/Sunnnnch/dsh-constellation"></a>
+  <img alt="DSH" src="https://img.shields.io/badge/DSH-%E2%89%A5%200.2.2--rc.1-7aa2ff">
+  <a href="https://github.com/Sunnnnch/dsh-constellation/stargazers"><img alt="stars" src="https://img.shields.io/github/stars/Sunnnnch/dsh-constellation"></a>
 </p>
 
 SSH / VPS 管理插件：让 **DeepSeek Harness 的模型**和**人**共用同一份服务器资产。

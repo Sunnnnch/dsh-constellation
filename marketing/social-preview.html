@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8" />
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1280px; height: 640px; }
+  body {
+    background: radial-gradient(1200px 600px at 78% -10%, #1b2740 0%, #0b0f16 55%), #0b0f16;
+    color: #e8ecf4;
+    font-family: "Segoe UI", "Microsoft YaHei", system-ui, sans-serif;
+    padding: 64px 72px;
+    display: flex; flex-direction: column; justify-content: space-between;
+    position: relative; overflow: hidden;
+  }
+  .stars { position: absolute; inset: 0; opacity: .35; }
+  .stars span { position: absolute; background: #cfe0ff; border-radius: 50%; }
+  .top { display: flex; align-items: center; gap: 26px; position: relative; }
+  .logo { width: 118px; height: 118px; flex: none; filter: drop-shadow(0 18px 40px rgba(90,130,255,.35)); }
+  h1 { font-size: 62px; letter-spacing: -.02em; font-weight: 700; line-height: 1; }
+  .sub { margin-top: 14px; font-size: 22px; color: #9aa7bd; letter-spacing: .01em; }
+  .sub b { color: #cfe0ff; font-weight: 600; }
+  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; position: relative; }
+  .card {
+    border: 1px solid #223049; background: linear-gradient(180deg, rgba(30,43,66,.55), rgba(16,23,36,.55));
+    border-radius: 18px; padding: 20px 22px;
+  }
+  .card h3 { font-size: 17px; font-weight: 650; margin-bottom: 8px; color: #e8ecf4; }
+  .card p { font-size: 14px; line-height: 1.65; color: #93a1b8; }
+  .card .k { display: inline-block; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: #7aa2ff; margin-bottom: 10px; }
+  .foot { display: flex; align-items: center; justify-content: space-between; position: relative; }
+  .repo { font-family: ui-monospace, Consolas, monospace; font-size: 17px; color: #9db8ff; }
+  .chips { display: flex; gap: 8px; }
+  .chip { border: 1px solid #2a3a58; color: #a9b7cf; font-size: 12px; padding: 5px 11px; border-radius: 999px; }
+</style>
+</head>
+<body>
+  <div class="stars" id="stars"></div>
+
+  <div class="top">
+    <svg class="logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+      <rect width="64" height="64" rx="16" fill="#111827"/>
+      <g stroke="#e5e7eb" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" opacity=".55" fill="none">
+        <path d="M10 42L22.4 21.6L34.4 34.4L44.8 15.2"/>
+        <path d="M34.4 34.4L54.4 32.8"/>
+        <path d="M34.4 34.4L36.4 52.8"/>
+      </g>
+      <g fill="#f9fafb">
+        <circle cx="10" cy="42" r="4.2"/><circle cx="22.4" cy="21.6" r="4.2"/>
+        <circle cx="34.4" cy="34.4" r="5.4"/><circle cx="44.8" cy="15.2" r="4.2"/>
+        <circle cx="54.4" cy="32.8" r="4.2"/><circle cx="36.4" cy="52.8" r="4.2"/>
+      </g>
+    </svg>
+    <div>
+      <h1>Constellation</h1>
+      <div class="sub">给 <b>DeepSeek Harness</b> 的 VPS 舰队管理 · 模型和人在同一个面板里运维</div>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <span class="k">Agent-native</span>
+      <h3>模型能直接操作</h3>
+      <p>15 个工具：执行命令、批量、SFTP、端口转发、持久终端。人和 AI 共用一份主机清单与一套审计。</p>
+    </div>
+    <div class="card">
+      <span class="k">Dashboard</span>
+      <h3>Komari 风状态页</h3>
+      <p>CPU / 内存 / 磁盘环形表、24h 曲线、累计流量、三网延迟与丢包趋势，全部本地采样。</p>
+    </div>
+    <div class="card">
+      <span class="k">Safety</span>
+      <h3>默认收着来</h3>
+      <p>危险命令拦截、只读主机、TOFU 主机指纹、凭据只存 key 名、全量操作审计。</p>
+    </div>
+  </div>
+
+  <div class="foot">
+    <div class="repo">github.com/Sunnnnch/dsh-constellation</div>
+    <div class="chips">
+      <span class="chip">DeepSeek Harness</span>
+      <span class="chip">SSH / SFTP</span>
+      <span class="chip">MIT</span>
+    </div>
+  </div>
+
+<script>
+  const wrap = document.getElementById('stars');
+  let seed = 7;
+  const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+  for (let i = 0; i < 90; i += 1) {
+    const s = document.createElement('span');
+    const size = rnd() * 2 + 1;
+    s.style.width = size + 'px';
+    s.style.height = size + 'px';
+    s.style.left = (rnd() * 100) + '%';
+    s.style.top = (rnd() * 100) + '%';
+    s.style.opacity = (rnd() * 0.7 + 0.15).toFixed(2);
+    wrap.appendChild(s);
+  }
+</script>
+</body>
+</html>
