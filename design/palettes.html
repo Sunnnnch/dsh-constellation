@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8" />
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1660px; padding: 26px; background: #e9ecf1; font-family: "Segoe UI", "Microsoft YaHei", system-ui, sans-serif;
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+  }
+  .cell { border-radius: 18px; overflow: hidden; background: #fff; box-shadow: 0 10px 28px rgba(15,23,42,.1); }
+  .label { display: flex; align-items: center; gap: 8px; padding: 8px 13px; background: #f8fafc; border-bottom: 1px solid #e5e9f0; font-size: 11px; font-weight: 650; color: #475569; }
+  .label .dots { margin-left: auto; display: flex; gap: 4px; }
+  .label .dots i { width: 10px; height: 10px; border-radius: 50%; display: block; }
+
+  .panel { padding: 16px; min-height: 392px; }
+  .head { display: flex; align-items: center; gap: 9px; margin-bottom: 13px; }
+  .glyph { width: 28px; height: 28px; border-radius: 8px; display: grid; place-items: center; font-size: 13px; color: #fff; background: linear-gradient(135deg, var(--a1), var(--a2)); }
+  .head h2 { font-size: 13.5px; font-weight: 650; color: #1e293b; }
+  .head p { font-size: 10px; color: #64748b; margin-top: 1px; }
+  .pill { margin-left: auto; font-size: 9.5px; padding: 3px 8px; border-radius: 999px; color: var(--a1); border: 1px solid color-mix(in srgb, var(--a1) 32%, transparent); background: color-mix(in srgb, var(--a1) 9%, transparent); }
+
+  .chips { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 10px; }
+  .chip { background: rgba(255,255,255,.6); border: 1px solid rgba(255,255,255,.85); border-radius: 11px; padding: 9px 10px; backdrop-filter: blur(12px); }
+  .chip .k { font-size: 9.5px; color: #64748b; }
+  .chip .v { font-size: 12px; font-weight: 650; color: #1e293b; margin-top: 1px; }
+  .chip .bar { height: 3px; border-radius: 3px; margin-top: 7px; background: rgba(30,41,59,.09); overflow: hidden; }
+  .chip .bar i { display: block; height: 100%; border-radius: 3px; background: linear-gradient(90deg, var(--a1), var(--a2)); }
+
+  .host { background: rgba(255,255,255,.58); border: 1px solid rgba(255,255,255,.9); border-radius: 12px; padding: 11px 12px; margin-bottom: 10px; backdrop-filter: blur(12px); }
+  .host .row1 { display: flex; align-items: center; gap: 7px; }
+  .dot { width: 6px; height: 6px; border-radius: 6px; background: #16a34a; }
+  .host .name { font-size: 12.5px; font-weight: 650; color: #1e293b; }
+  .host .addr { font: 10px/1 ui-monospace, Consolas, monospace; color: #94a3b8; margin: 4px 0 8px; }
+  .meters { display: grid; grid-template-columns: repeat(3, 1fr); gap: 7px; }
+  .meters .t { display: flex; justify-content: space-between; font-size: 9px; color: #64748b; margin-bottom: 3px; }
+  .meters .tr { height: 3px; background: rgba(30,41,59,.09); border-radius: 3px; overflow: hidden; }
+  .meters .tr i { display: block; height: 100%; background: var(--a1); border-radius: 3px; }
+
+  .net { background: rgba(255,255,255,.55); border: 1px solid rgba(255,255,255,.9); border-radius: 12px; padding: 10px 12px; backdrop-filter: blur(12px); }
+  .net h4 { font-size: 9.5px; color: #64748b; letter-spacing: .04em; margin-bottom: 5px; }
+  .net .r { display: flex; align-items: center; gap: 7px; font-size: 10px; color: #334155; padding: 3px 0; }
+  .net .r b { margin-left: auto; font-weight: 650; color: var(--a1); }
+  .net svg { flex: 1; height: 14px; }
+</style>
+</head>
+<body>
+
+<!-- 1 雾蓝 -->
+<section class="cell">
+  <div class="label">1 · 雾蓝 <div class="dots" style="--a1:#2563eb;--a2:#38bdf8"><i style="background:#2563eb"></i><i style="background:#38bdf8"></i></div></div>
+  <div class="panel" style="background:linear-gradient(145deg,#eef3f9,#e2ebf7 60%,#e8f1fb); --a1:#2563eb; --a2:#38bdf8">
+    <div class="head"><div class="glyph">✦</div><div><h2>Constellation</h2><p>3 台主机 · 2 在线</p></div><div class="pill">在线</div></div>
+    <div class="chips">
+      <div class="chip"><div class="k">CPU</div><div class="v">32%</div><div class="bar"><i style="width:32%"></i></div></div>
+      <div class="chip"><div class="k">内存</div><div class="v">58%</div><div class="bar"><i style="width:58%"></i></div></div>
+      <div class="chip"><div class="k">磁盘</div><div class="v">41%</div><div class="bar"><i style="width:41%"></i></div></div>
+    </div>
+    <div class="host">
+      <div class="row1"><span class="dot"></span><span class="name">东京-1</span><span style="margin-left:auto;font-size:9.5px;color:#94a3b8">0.8ms*</span></div>
+      <div class="addr">root@10.0.0.12:22</div>
+      <div class="meters">
+        <div><div class="t"><span>CPU</span><span>32%</span></div><div class="tr"><i style="width:32%"></i></div></div>
+        <div><div class="t"><span>内存</span><span>58%</span></div><div class="tr"><i style="width:58%"></i></div></div>
+        <div><div class="t"><span>磁盘</span><span>41%</span></div><div class="tr"><i style="width:41%"></i></div></div>
+      </div>
+    </div>
+    <div class="net"><h4>三网 · 服务器出网</h4>
+      <div class="r">电信 <svg viewBox="0 0 120 14" preserveAspectRatio="none"><path d="M0 10 L20 8 L40 11 L60 6 L80 9 L100 7 L120 8" fill="none" stroke="var(--a1)" stroke-width="1.4"/></svg><b>42ms</b></div>
+      <div class="r">联通 <svg viewBox="0 0 120 14" preserveAspectRatio="none"><path d="M0 8 L20 10 L40 7 L60 9 L80 5 L100 8 L120 6" fill="none" stroke="var(--a1)" stroke-width="1.4"/></svg><b>51ms</b></div>
+      <div class="r">移动 <svg viewBox="0 0 120 14" preserveAspectRatio="none"><path d="M0 5 L20 3 L40 6 L60 2 L80 5 L100 4 L120 3" fill="none" stroke="var(--a1)" stroke-width="1.4"/></svg><b>88ms</b></div>
+    </div>
+  </div>
+</section>
+
+<!-- 2 青瓷 -->
+<section class="cell">
+  <div class="label">2 · 青瓷 <div class="dots"><i style="background:#0f766e"></i><i style="background:#34d399"></i></div></div>
+  <div class="panel" style="background:linear-gradient(145deg,#f0f7f4,#e3f0ea 60%,#eaf6f2); --a1:#0f766e; --a2:#34d399">
+    <div class="head"><div class="glyph">✦</div><div><h2>Constellation</h2><p>3 台主机 · 2 在线</p></div><div class="pill">在线</div></div>
+    <div class="chips">
+      <div class="chip"><div class="k">CPU</div><div class="v">32%</div><div class="bar"><i style="width:32%"></i></div></div>
+      <div class="chip"><div class="k">内存</div><div class="v">58%</div><div class="bar"><i style="width:58%"></i></div></div>
+      <div class="chip"><div class="k">磁盘</div><div class="v">41%</div><div class="bar"><i style="width:41%"></i></div></div>
+    </div>
+    <div class="host">
+      <div class="row1"><span class="dot"></span><span class="name">东京-1</span><span style="margin-left:auto;font-size:9.5px;color:#94a3b8">0.8ms*</span></div>
+      <div class="addr">root@10.0.0.12:22</div>
+      <div class="meters">
+        <div><div class="t"><span>CPU</span><span>32%</span></div><div class="tr"><i style="width:32%"></i></div></div>
+        <div><div class="t"><span>内存</span><span>58%</span></div><div class="tr"><i style="width:58%"></i></div></div>
+        <div><div class="t"><span>磁盘</span><span>41%</span></div><div class="tr"><i style="width:41%"></i></div></div>
+      </div>
+    </div>
+    <div class="net"><h4>三网 · 服务器出网</h4>
+      <div class="r">电信 <svg viewBox="0 0 120 14" preserveAspectRatio="none"><path d="M0 10 L20 8 L40 11 L60 6 L80 9 L100 7 L120 8" fill="none" stroke="var(--a1)" stroke-width="1.4"/></svg><b>42ms</b></div>
+      <div class="r">联通 <svg viewBox="0 0 120 14" preserveAspectRatio="none"><path d="M0 8 L20 10 L40 7 L60 9 L80 5 L100 8 L120 6" fill="none" stroke="var(--a1)" stroke-width="1.4"/></svg><b>51ms</b></div>
+      <div class="r">移动 <svg viewBox="0 0 120 14" preserveAspectRatio="none"><path d="M0 5 L20 3 L40 6 L60 2 L80 5 L100 4 L120 3" fill="none" stroke="var(--a1)" stroke-width="1.4"/></svg><b>88ms</b></div>
+    </div>
+  </div>
+</section>
+
+<!-- 3 沙褐 -->
+<section class="cell">
+  <div class="label">3 · 沙褐 <div class="dots"><i style="background:#a16207"></i><i style="background:#d97706"></i></div></div>
+  <div class="panel" style="background:linear-gradient(145deg,#f9f4ea,#f0e6d6 60%,#f7efe2); --a1:#a16207; --a2:#d97706">
+    <div class="head"><div class="glyph">✦</div><div><h2>Constellation</h2><p>3 台主机 · 2 在线</p></div><div class="pill">在线</div></div>
+    <div class="chips">
+      <div class="chip"><div class="k">CPU</div><div class="v">32%</div><div class="bar"><i style="width:32%"></i></div></div>
+      <div class="chip"><div class="k">内存</div><div class="v">58%</div><div class="bar"><i style="width:58%"></i></div></div>
+      <div class="chip"><div class="k">磁盘</div><div class="v">41%</div><div class="bar"><i style="width:41%"></i></div></div>
+    </div>
+    <div class="host">
+      <div class="row1"><span class="dot"></span><span class="name">东京-1</span><span style="margin-left:auto;font-size:9.5px;color:#a8a29e">0.8ms*</span></div>
+      <div class="addr" style="color:#a8a29e">root@10.0.0.12:22</div>
+      <div class="meters">
+        <div><div class="t"><span>CPU</span><span>32%</span></div><div class="tr"><i style="width:32%"></i></div></div>
+        <div><div class="t"><span>内存</span><span>58%</span></div><div class="tr"><i style="width:58%"></i></div></div>
+        <div><div class="t"><span>磁盘</span><span>41%</span></div><div class="tr"><i style="width:41%"></i></div></div>
+      </div>
+    </div>
+    <div class="net"><h4>三网 · 服务器出网</h4>
+      <div class="r">电信 <svg viewBox="0 0 120 14" preserveAspectRatio="none"><path d="M0 10 L20 8 L40 11 L60 6 L80 9 L100 7 L120 8" fill="none" stroke="var(--a1)" stroke-width="1.4"/></svg><b>42ms</b></div>
+      <div class="r">联通 <svg viewBox="0 0 120 14" preserveAspectRatio="none"><path d="M0 8 L20 10 L40 7 L60 9 L80 5 L100 8 L120 6" fill="none" stroke="var(--a1)" stroke-width="1.4"/></svg><b>51ms</b></div>
+      <div class="r">移动 <svg viewBox="0 0 120 14" preserveAspectRatio="none"><path d="M0 5 L20 3 L40 6 L60 2 L80 5 L100 4 L120 3" fill="none" stroke="var(--a1)" stroke-width="1.4"/></svg><b>88ms</b></div>
+    </div>
+  </div>
+</section>
+
+<!-- 4 石墨 -->
+<section class="cell">
+  <div class="label">4 · 石墨 <div class="dots"><i style="background:#334155"></i><i style="background:#64748b"></i></div></div>
+  <div class="panel" style="background:linear-gradient(145deg,#f5f6f8,#e8ebef 60%,#f1f3f6); --a1:#334155; --a2:#64748b">
+    <div class="head"><div class="glyph">✦</div><div><h2>Constellation</h2><p>3 台主机 · 2 在线</p></div><div class="pill">在线</div></div>
+    <div class="chips">
+      <div class="chip"><div class="k">CPU</div><div class="v">32%</div><div class="bar"><i style="width:32%"></i></div></div>
+      <div class="chip"><div class="k">内存</div><div class="v">58%</div><div class="bar"><i style="width:58%"></i></div></div>
+      <div class="chip"><div class="k">磁盘</div><div class="v">41%</div><div class="bar"><i style="width:41%"></i></div></div>
+    </div>
+    <div class="host">
+      <div class="row1"><span class="dot"></span><span class="name">东京-1</span><span style="margin-left:auto;font-size:9.5px;color:#94a3b8">0.8ms*</span></div>
+      <div class="addr">root@10.0.0.12:22</div>
+      <div class="meters">
+        <div><div class="t"><span>CPU</span><span>32%</span></div><div class="tr"><i style="width:32%"></i></div></div>
+        <div><div class="t"><span>内存</span><span>58%</span></div><div class="tr"><i style="width:58%"></i></div></div>
+        <div><div class="t"><span>磁盘</span><span>41%</span></div><div class="tr"><i style="width:41%"></i></div></div>
+      </div>
+    </div>
+    <div class="net"><h4>三网 · 服务器出网</h4>
+      <div class="r">电信 <svg viewBox="0 0 120 14" preserveAspectRatio="none"><path d="M0 10 L20 8 L40 11 L60 6 L80 9 L100 7 L120 8" fill="none" stroke="var(--a1)" stroke-width="1.4"/></svg><b>42ms</b></div>
+      <div class="r">联通 <svg viewBox="0 0 120 14" preserveAspectRatio="none"><path d="M0 8 L20 10 L40 7 L60 9 L80 5 L100 8 L120 6" fill="none" stroke="var(--a1)" stroke-width="1.4"/></svg><b>51ms</b></div>
+      <div class="r">移动 <svg viewBox="0 0 120 14" preserveAspectRatio="none"><path d="M0 5 L20 3 L40 6 L60 2 L80 5 L100 4 L120 3" fill="none" stroke="var(--a1)" stroke-width="1.4"/></svg><b>88ms</b></div>
+    </div>
+  </div>
+</section>
+
+<!-- 5 酒红 -->
+<section class="cell">
+  <div class="label">5 · 酒红 <div class="dots"><i style="background:#9f1239"></i><i style="background:#e11d48"></i></div></div>
+  <div class="panel" style="background:linear-gradient(145deg,#faf2f3,#f2e3e7 60%,#f8edef); --a1:#9f1239; --a2:#e11d48">
+    <div class="head"><div class="glyph">✦</div><div><h2>Constellation</h2><p>3 台主机 · 2 在线</p></div><div class="pill">在线</div></div>
+    <div class="chips">
+      <div class="chip"><div class="k">CPU</div><div class="v">32%</div><div class="bar"><i style="width:32%"></i></div></div>
+      <div class="chip"><div class="k">内存</div><div class="v">58%</div><div class="bar"><i style="width:58%"></i></div></div>
+      <div class="chip"><div class="k">磁盘</div><div class="v">41%</div><div class="bar"><i style="width:41%"></i></div></div>
+    </div>
+    <div class="host">
+      <div class="row1"><span class="dot"></span><span class="name">东京-1</span><span style="margin-left:auto;font-size:9.5px;color:#94a3b8">0.8ms*</span></div>
+      <div class="addr">root@10.0.0.12:22</div>
+      <div class="meters">
+        <div><div class="t"><span>CPU</span><span>32%</span></div><div class="tr"><i style="width:32%"></i></div></div>
+        <div><div class="t"><span>内存</span><span>58%</span></div><div class="tr"><i style="width:58%"></i></div></div>
+        <div><div class="t"><span>磁盘</span><span>41%</span></div><div class="tr"><i style="width:41%"></i></div></div>
+      </div>
+    </div>
+    <div class="net"><h4>三网 · 服务器出网</h4>
+      <div class="r">电信 <svg viewBox="0 0 120 14" preserveAspectRatio="none"><path d="M0 10 L20 8 L40 11 L60 6 L80 9 L100 7 L120 8" fill="none" stroke="var(--a1)" stroke-width="1.4"/></svg><b>42ms</b></div>
+      <div class="r">联通 <svg viewBox="0 0 120 14" preserveAspectRatio="none"><path d="M0 8 L20 10 L40 7 L60 9 L80 5 L100 8 L120 6" fill="none" stroke="var(--a1)" stroke-width="1.4"/></svg><b>51ms</b></div>
+      <div class="r">移动 <svg viewBox="0 0 120 14" preserveAspectRatio="none"><path d="M0 5 L20 3 L40 6 L60 2 L80 5 L100 4 L120 3" fill="none" stroke="var(--a1)" stroke-width="1.4"/></svg><b>88ms</b></div>
+    </div>
+  </div>
+</section>
+
+<!-- 6 暮紫（当前） -->
+<section class="cell">
+  <div class="label">6 · 暮紫（当前） <div class="dots"><i style="background:#4f46e5"></i><i style="background:#ec4899"></i></div></div>
+  <div class="panel" style="background:linear-gradient(145deg,#eef2ff,#fdf2f8 55%,#e0f2fe); --a1:#4f46e5; --a2:#ec4899">
+    <div class="head"><div class="glyph">✦</div><div><h2>Constellation</h2><p>3 台主机 · 2 在线</p></div><div class="pill">在线</div></div>
+    <div class="chips">
+      <div class="chip"><div class="k">CPU</div><div class="v">32%</div><div class="bar"><i style="width:32%"></i></div></div>
+      <div class="chip"><div class="k">内存</div><div class="v">58%</div><div class="bar"><i style="width:58%"></i></div></div>
+      <div class="chip"><div class="k">磁盘</div><div class="v">41%</div><div class="bar"><i style="width:41%"></i></div></div>
+    </div>
+    <div class="host">
+      <div class="row1"><span class="dot"></span><span class="name">东京-1</span><span style="margin-left:auto;font-size:9.5px;color:#94a3b8">0.8ms*</span></div>
+      <div class="addr">root@10.0.0.12:22</div>
+      <div class="meters">
+        <div><div class="t"><span>CPU</span><span>32%</span></div><div class="tr"><i style="width:32%"></i></div></div>
+        <div><div class="t"><span>内存</span><span>58%</span></div><div class="tr"><i style="width:58%"></i></div></div>
+        <div><div class="t"><span>磁盘</span><span>41%</span></div><div class="tr"><i style="width:41%"></i></div></div>
+      </div>
+    </div>
+    <div class="net"><h4>三网 · 服务器出网</h4>
+      <div class="r">电信 <svg viewBox="0 0 120 14" preserveAspectRatio="none"><path d="M0 10 L20 8 L40 11 L60 6 L80 9 L100 7 L120 8" fill="none" stroke="var(--a1)" stroke-width="1.4"/></svg><b>42ms</b></div>
+      <div class="r">联通 <svg viewBox="0 0 120 14" preserveAspectRatio="none"><path d="M0 8 L20 10 L40 7 L60 9 L80 5 L100 8 L120 6" fill="none" stroke="var(--a1)" stroke-width="1.4"/></svg><b>51ms</b></div>
+      <div class="r">移动 <svg viewBox="0 0 120 14" preserveAspectRatio="none"><path d="M0 5 L20 3 L40 6 L60 2 L80 5 L100 4 L120 3" fill="none" stroke="var(--a1)" stroke-width="1.4"/></svg><b>88ms</b></div>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
