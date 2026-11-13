@@ -1,0 +1,26 @@
+# Mounts the VPS capability: host inventory, model tools, SSH terminal backend,
+# and the server panel in the right sidebar. Tunables are documented in README.
+- insert:
+    - id: vps
+      name: '@sunrise/dsh-vps'
+      config:
+        maxOutputBytes: 65536
+        defaultTimeoutMs: 30000
+        maxTimeoutMs: 600000
+        tunnelAllowPublic: false
+        guardDangerous: true
+        metricsIntervalMs: 30000
+        alertThresholds:
+          memPct: 90
+          diskPct: 90
+          cpuPct: 200
+        # alertWebhook: https://example.com/hooks/dsh
+        # monitors:
+        #   - name: komari
+        #     kind: komari
+        #     baseUrl: https://komari.example.com
+        #     tokenRef: DSH_VPS_KOMARI_TOKEN
+        #   - name: nezha
+        #     kind: nezha
+        #     baseUrl: https://nezha.example.com
+        #     tokenRef: DSH_VPS_NEZHA_TOKEN

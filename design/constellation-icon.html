@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8" />
+<style>
+  :root { --bg:#ffffff; --fg:#12161c; --muted:#6b7280; --line:#e6e8ec; --accent:#2f6feb; }
+  * { box-sizing:border-box; }
+  body { margin:0; padding:34px 38px; background:var(--bg); color:var(--fg);
+         font:13px/1.5 "Segoe UI","Microsoft YaHei",system-ui,sans-serif; }
+  h1 { font-size:15px; margin:0 0 2px; letter-spacing:.01em; }
+  p.sub { margin:0 0 26px; color:var(--muted); font-size:12px; }
+  .row { display:flex; align-items:flex-end; gap:34px; margin-bottom:30px; }
+  .cell { display:flex; flex-direction:column; align-items:center; gap:10px; color:var(--muted); font-size:11px; }
+  .frame { display:grid; place-items:center; width:120px; height:120px; border:1px solid var(--line); border-radius:16px; }
+  .frame.sm { width:76px; height:76px; border-radius:12px; }
+  .glyph { color:var(--fg); }
+  .rail { display:flex; flex-direction:column; gap:8px; padding:12px; border:1px solid var(--line); border-radius:14px; width:210px; }
+  .rail .item { display:flex; align-items:center; gap:10px; padding:8px 10px; border-radius:10px; font-size:12px; color:#374151; }
+  .rail .item.active { background:#eef3fe; color:#1d4ed8; font-weight:600; }
+  .rail .item .dot { margin-left:auto; font-size:10px; color:var(--muted); }
+  .caption { margin-top:26px; color:var(--muted); font-size:11.5px; max-width:640px; }
+  .caption code { background:#f4f5f7; border:1px solid var(--line); border-radius:5px; padding:0 4px; }
+</style>
+</head>
+<body>
+  <h1>Constellation · 图标</h1>
+  <p class="sub">星点 + 连线：多台主机是一张星图，不是一台服务器</p>
+
+  <div class="row">
+    <div class="cell"><div class="frame sm">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.15" stroke-linecap="round" stroke-linejoin="round" class="glyph">
+        <path d="M2.5 10.5L5.6 5.4L8.6 8.6L11.2 3.8" opacity=".55"/>
+        <path d="M8.6 8.6L13.6 8.2" opacity=".55"/>
+        <path d="M8.6 8.6L9.1 13.2" opacity=".55"/>
+        <circle cx="2.5" cy="10.5" r="1.05" fill="currentColor" stroke="none"/>
+        <circle cx="5.6" cy="5.4" r="1.05" fill="currentColor" stroke="none"/>
+        <circle cx="8.6" cy="8.6" r="1.35" fill="currentColor" stroke="none"/>
+        <circle cx="11.2" cy="3.8" r="1.05" fill="currentColor" stroke="none"/>
+        <circle cx="13.6" cy="8.2" r="1.05" fill="currentColor" stroke="none"/>
+        <circle cx="9.1" cy="13.2" r="1.05" fill="currentColor" stroke="none"/>
+      </svg>
+    </div>16px · 侧栏</div>
+
+    <div class="cell"><div class="frame sm">
+      <svg width="24" height="24" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.15" stroke-linecap="round" stroke-linejoin="round" class="glyph">
+        <path d="M2.5 10.5L5.6 5.4L8.6 8.6L11.2 3.8" opacity=".55"/>
+        <path d="M8.6 8.6L13.6 8.2" opacity=".55"/>
+        <path d="M8.6 8.6L9.1 13.2" opacity=".55"/>
+        <circle cx="2.5" cy="10.5" r="1.05" fill="currentColor" stroke="none"/>
+        <circle cx="5.6" cy="5.4" r="1.05" fill="currentColor" stroke="none"/>
+        <circle cx="8.6" cy="8.6" r="1.35" fill="currentColor" stroke="none"/>
+        <circle cx="11.2" cy="3.8" r="1.05" fill="currentColor" stroke="none"/>
+        <circle cx="13.6" cy="8.2" r="1.05" fill="currentColor" stroke="none"/>
+        <circle cx="9.1" cy="13.2" r="1.05" fill="currentColor" stroke="none"/>
+      </svg>
+    </div>24px</div>
+
+    <div class="cell"><div class="frame">
+      <svg width="64" height="64" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.15" stroke-linecap="round" stroke-linejoin="round" class="glyph">
+        <path d="M2.5 10.5L5.6 5.4L8.6 8.6L11.2 3.8" opacity=".55"/>
+        <path d="M8.6 8.6L13.6 8.2" opacity=".55"/>
+        <path d="M8.6 8.6L9.1 13.2" opacity=".55"/>
+        <circle cx="2.5" cy="10.5" r="1.05" fill="currentColor" stroke="none"/>
+        <circle cx="5.6" cy="5.4" r="1.05" fill="currentColor" stroke="none"/>
+        <circle cx="8.6" cy="8.6" r="1.35" fill="currentColor" stroke="none"/>
+        <circle cx="11.2" cy="3.8" r="1.05" fill="currentColor" stroke="none"/>
+        <circle cx="13.6" cy="8.2" r="1.05" fill="currentColor" stroke="none"/>
+        <circle cx="9.1" cy="13.2" r="1.05" fill="currentColor" stroke="none"/>
+      </svg>
+    </div>64px</div>
+
+    <div class="cell"><div class="frame" style="width:120px;height:120px">
+      <div style="width:64px;height:64px;border-radius:16px;background:#12161c;display:grid;place-items:center;color:#fff">
+        <svg width="40" height="40" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.15" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M2.5 10.5L5.6 5.4L8.6 8.6L11.2 3.8" opacity=".55"/>
+          <path d="M8.6 8.6L13.6 8.2" opacity=".55"/>
+          <path d="M8.6 8.6L9.1 13.2" opacity=".55"/>
+          <circle cx="2.5" cy="10.5" r="1.05" fill="currentColor" stroke="none"/>
+          <circle cx="5.6" cy="5.4" r="1.05" fill="currentColor" stroke="none"/>
+          <circle cx="8.6" cy="8.6" r="1.35" fill="currentColor" stroke="none"/>
+          <circle cx="11.2" cy="3.8" r="1.05" fill="currentColor" stroke="none"/>
+          <circle cx="13.6" cy="8.2" r="1.05" fill="currentColor" stroke="none"/>
+          <circle cx="9.1" cy="13.2" r="1.05" fill="currentColor" stroke="none"/>
+        </svg>
+      </div>
+    </div>深底反白</div>
+
+    <div class="cell">
+      <div class="rail">
+        <div class="item active">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.15" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2.5 10.5L5.6 5.4L8.6 8.6L11.2 3.8" opacity=".55"/>
+            <path d="M8.6 8.6L13.6 8.2" opacity=".55"/>
+            <path d="M8.6 8.6L9.1 13.2" opacity=".55"/>
+            <circle cx="2.5" cy="10.5" r="1.05" fill="currentColor" stroke="none"/>
+            <circle cx="5.6" cy="5.4" r="1.05" fill="currentColor" stroke="none"/>
+            <circle cx="8.6" cy="8.6" r="1.35" fill="currentColor" stroke="none"/>
+            <circle cx="11.2" cy="3.8" r="1.05" fill="currentColor" stroke="none"/>
+            <circle cx="13.6" cy="8.2" r="1.05" fill="currentColor" stroke="none"/>
+            <circle cx="9.1" cy="13.2" r="1.05" fill="currentColor" stroke="none"/>
+          </svg>
+          Constellation
+          <span class="dot">1 台</span>
+        </div>
+        <div class="item">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round">
+            <rect x="2.25" y="2.75" width="11.5" height="4.5" rx="1.2"/>
+            <rect x="2.25" y="8.75" width="11.5" height="4.5" rx="1.2"/>
+          </svg>
+          服务器（旧图标）
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="caption">
+    设计要点：<code>1.15</code> 描边 + 实心星点；主星（中心）R=1.35，其余 R=1.05；连线 55% 透明度，让「星」比「连线」更重。
+    16px 下仍能看出六个点和三条边的骨架，不糊成一团。
+  </div>
+</body>
+</html>

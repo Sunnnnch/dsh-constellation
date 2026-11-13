@@ -1,0 +1,22 @@
+# dependencies
+node_modules/
+.pnpm-store/
+
+# local profile / harness state
+.profile-package.backup.json
+storages/
+
+# generated test fixtures (never commit private keys)
+test/keys/
+
+# build & test artifacts
+dist/
+coverage/
+*.log
+*.tgz
+
+# editor / OS
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
