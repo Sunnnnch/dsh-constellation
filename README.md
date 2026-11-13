@@ -17,6 +17,18 @@
 SSH / VPS 管理插件：让 **DeepSeek Harness 的模型**和**人**共用同一份服务器资产。
 模型能列主机、跑命令、传文件、开隧道、读状态；人可以从**左侧栏的「Constellation」入口**打开完整的 VPS 管理页，也可以在右侧栏用同一个面板边聊边看。
 
+## 界面
+
+**总览**：分组主机列表、状态卡片、每台机器的 CPU/内存/磁盘/流量与三网小图。
+
+<img src="design/ui-overview.png" alt="Constellation 总览" width="900" />
+
+**主机状态**：环形指标、三网趋势与丢包、最近 1 小时曲线、磁盘分区与网络。
+
+<img src="design/ui-detail.png" alt="Constellation 主机状态" width="900" />
+
+> 图按实际布局与配色还原（示例数据为 10.0.0.x 内网地址）。
+
 ## 入口
 
 | 位置 | 形态 | 说明 |
