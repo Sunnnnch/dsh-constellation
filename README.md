@@ -40,6 +40,8 @@ pnpm add github:Sunnnnch/dsh-constellation#<commit-sha>
 
 然后在该 profile 目录 `pnpm install`，重启 DSH（或关掉再打开插件 entry）。本地开发用 `link:/path/to/dsh-constellation`。
 
+> pnpm 10+ 默认拦截依赖的构建脚本，安装时会提示 `Ignored build scripts: ssh2, cpu-features`。ssh2 有纯 JS 回退，不跑也能用；想要原生加速就在安装目录执行 `pnpm approve-builds`。
+
 ## 模型侧工具
 
 | 工具 | 用途 |
