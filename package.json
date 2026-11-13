@@ -1,7 +1,7 @@
 {
   "name": "@sunrise/dsh-vps",
   "version": "0.2.0",
-  "description": "Constellation — SSH / VPS fleet management for DeepSeek Harness: host inventory, remote exec, SFTP, port forwarding, an SSH terminal backend, and a star-map panel in the left sidebar.",
+  "description": "Constellation — SSH / VPS management for DeepSeek Harness: host inventory, remote exec, SFTP, port forwarding, an SSH terminal backend, and a star-map panel in the left sidebar.",
   "type": "module",
   "main": "lib/index.js",
   "exports": {
