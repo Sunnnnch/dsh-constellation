@@ -5,7 +5,7 @@
 <h1 align="center">Constellation</h1>
 
 <p align="center">
-  <code>@sunrise/dsh-vps</code> · 给 DeepSeek Harness 的人机共用控制台
+  <code>@sunrise/dsh-vps</code> · 给 DeepSeek Harness 的服务器管理插件
 </p>
 
 <p align="center">
